@@ -9,7 +9,8 @@ export default function EditBounty() {
         client: '',
         reward: 0,
         lastSeen: '',
-        ship: ''
+        ship: '',
+        captured: false
     })
     const [errorMessage, setErrorMessage] = useState('')
 
@@ -117,6 +118,16 @@ export default function EditBounty() {
                         value={form.ship}
                         placeholder='ship...'
                         onChange={e => setForm({ ...form, ship: e.target.value })}
+                    />
+                </div>
+
+                <div>
+                    <label htmlFor='captured'>Captured:</label>
+                    <input 
+                        type='checkbox'
+                        id='captured'
+                        value={form.captured}
+                        onChange={() => setForm({ ...form, captured: !form.captured  })}
                     />
                 </div>
 

@@ -10,7 +10,8 @@ export default function NewBounty() {
         client: '',
         reward: 0,
         lastSeen: '',
-        ship: ''
+        ship: '',
+        captured: false
     })
     const [errorMessage, setErrorMessage] = useState('')
 
