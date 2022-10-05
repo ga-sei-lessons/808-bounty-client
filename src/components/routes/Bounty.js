@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from 'react-router-dom' 
+import { useParams, Link, useNavigate, useLinkClickHandler } from 'react-router-dom' 
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -39,6 +39,14 @@ export default function Bounty() {
         }
     }
 
+    // const components = state.map(thing => {
+    //     return (
+    //         <Component 
+    //             onClick={() => handler(thing)}
+    //         />
+    //     )
+    // })
+
     return (
         <div>
             <h1>Bounty Details</h1>
@@ -46,7 +54,9 @@ export default function Bounty() {
             <p>{errorMessage}</p>
             
             <div>
-                <Link to={`/bounties/${id}/edit`}>Edit this Bounty</Link>
+                <Link to={`/bounties/${id}/edit`}>
+                    <button>Edit</button>
+                </Link>
 
                 <button
                     onClick={handleDelete}
